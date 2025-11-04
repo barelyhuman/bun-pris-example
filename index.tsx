@@ -5,7 +5,7 @@ import { join } from "path";
 
 const app = express();
 
-app.use(express.static(join(import.meta.dir,"./client")))
+app.use("/client",express.static(join(import.meta.dir,"./client")))
 
 app.get("/", (req, res) => {
   return res.send(renderToString(<Counter/>));
